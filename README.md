@@ -43,6 +43,96 @@ Final dataset used for experiments:
 - **377 patients**
 - **10 tumor slices per patient**
 
+
+
 ---
 
 ## Proposed Framework
+
+BraTS Dataset
+↓
+10 Slice Extraction
+↓
+377 Patients
+↓
+Dataset Loader
+↓
+Hybrid Model
+(CNN + Attention + Transformer)
+↓
+Hybrid Loss
+↓
+Training Loop
+↓
+Evaluation Metrics
+↓
+Segmentation Visualization
+
+
+
+
+---
+
+## Model Architecture
+
+The architecture consists of:
+
+- **3D CNN Encoder** for spatial feature extraction
+- **Attention Fusion Module** to enhance tumor regions
+- **Transformer Bottleneck** for global context learning
+- **Decoder Network** with skip connections
+- **Multi-class segmentation output**
+
+Input Shape:
+
+
+MRI Modalities:
+
+- T1
+- T1ce
+- T2
+- FLAIR
+
+---
+
+## Loss Function
+
+Hybrid loss function combining:
+
+- Cross Entropy Loss
+- Dice Loss
+- Boundary-aware loss
+
+This improves segmentation accuracy and boundary precision.
+
+---
+
+## Evaluation Metrics
+
+The model is evaluated using:
+
+- Dice Similarity Coefficient
+- Intersection over Union (IoU)
+- Precision
+- Recall
+- F1 Score
+- Hausdorff Distance
+- Expected Calibration Error
+
+Example results:
+
+| Metric | Score |
+|------|------|
+Dice | 0.81 |
+IoU | 0.69 |
+Precision | 0.82 |
+Recall | 0.82 |
+F1 Score | 0.81 |
+
+---
+
+## Example Segmentation Results
+
+The model predicts tumor regions from MRI scans:
+
+
